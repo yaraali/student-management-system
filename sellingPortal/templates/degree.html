@@ -1,0 +1,39 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+    <div class="container">
+
+        <table class="table">
+          <thead>
+            <tr> 
+                
+                <th scope="col">Student degree</th>
+                
+            </tr>
+          </thead>
+          <tbody>
+          
+              {% for item in degrees  %}
+                <tr>
+              <td> {{item.studentDegree}} </td>
+               </tr>  
+              {% endfor %}
+           
+          </tbody>
+        </table>
+        </div>
+
+        <div  action='' class="container">
+          <form method='POST'>
+              <h1> Register New Degree </h1>
+                 {% csrf_token %}
+                 {{form.as_p}}
+  
+            <button type="submit"> Add Degree </button>
+            <h1> {{msg}} </h1>
+          </form >
+         
+      </div>
+
+          
+{% endblock%}

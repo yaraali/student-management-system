@@ -1,0 +1,38 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+    <div class="container">
+
+        <table class="table">
+          <thead>
+            <tr> 
+                <th scope="col">Id</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">lastName</th>
+                <th scope="col">age</th>
+                <th scope="col">Date of Birth</th>
+                
+            </tr>
+          </thead>
+          <tbody>
+          
+              {% for item in students  %}
+                <tr>
+              <td>{{item.id}}</td>
+              <td> <a href='/Degree/{{item.id}}'>{{item.firstName}} </a></td>
+              <td>{{item.lastName}}</td>
+              <td>{{item.age}}</td>
+              <td>{{item.birthDate}}</td>
+               </tr>  
+              {% endfor %}
+           
+          </tbody>
+        </table>
+        </div>
+
+          
+{% endblock%}
+
+
+
+
